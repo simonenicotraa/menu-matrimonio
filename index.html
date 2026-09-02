@@ -3,91 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu di Nozze</title>
+  <title>Menu di Nozze — Francesca e Simone</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    /* Stili generali */
     * {
       box-sizing: border-box;
-    }
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #faf7f2;
-      color: #333;
       margin: 0;
-      padding: 20px 15px;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f1ea;
+      color: #3b3a36;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 20px 15px;
     }
 
-    /* Contenitore Menu */
+    /* Modulo Card principale */
     .card {
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
       background: #ffffff;
-      padding: 35px 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e8e1d5;
+      padding: 45px 30px;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2dad0;
       text-align: center;
+      position: relative;
     }
 
-    /* Intestazione */
-    h1 {
-      font-family: 'Times New Roman', serif;
-      font-size: 28px;
-      color: #6b5b45;
-      letter-spacing: 2px;
-      margin: 0 0 5px 0;
-      text-transform: uppercase;
-      font-weight: normal;
+    /* Dettaglio cornice interna */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      border: 1px solid #d4c8b8;
+      border-radius: 8px;
+      pointer-events: none;
     }
+
+    /* Titoli e Nomi */
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      color: #556b2f; /* Verde Salvia */
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
     p.subtitle {
+      font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       color: #8c7a6b;
-      font-size: 15px;
-      margin: 0 0 25px 0;
+      font-size: 18px;
+      margin-bottom: 25px;
     }
 
-    /* Separatori */
+    /* Separatori decorativi */
     .divider {
-      width: 60px;
-      height: 1px;
-      background: #c2b49b;
-      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 22px auto;
     }
 
-    /* Portate */
+    .divider::before, .divider::after {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background-color: #c5b398;
+    }
+
+    .divider-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #c5b398;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+
+    /* Sezioni Portate */
     .section-title {
-      font-size: 13px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: #8c7a6b;
-      margin-top: 25px;
+      color: #9e8a78;
+      margin-top: 20px;
       margin-bottom: 12px;
-      font-weight: bold;
+      font-weight: 500;
     }
+
     .dish-name {
-      font-size: 16px;
-      font-weight: bold;
-      color: #2c2c2c;
-      margin-bottom: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #2b2b2b;
+      margin-bottom: 3px;
     }
+
     .dish-desc {
-      font-size: 13px;
-      color: #666666;
+      font-size: 12px;
+      color: #6e6b63;
       font-style: italic;
-      margin-top: 0;
-      margin-bottom: 16px;
-      line-height: 1.4;
+      line-height: 1.5;
+      margin-bottom: 14px;
     }
 
     /* Piè di pagina */
     .footer {
-      margin-top: 35px;
-      font-size: 13px;
-      color: #a09383;
+      margin-top: 30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: #556b2f;
       font-style: italic;
     }
   </style>
@@ -95,16 +134,16 @@
 <body>
 
   <div class="card">
-    <h1>Marco &amp; Elena</h1>
+    <h1>Francesca &amp; Simone</h1>
     <p class="subtitle">Menu di Nozze</p>
 
-    <div class="divider"></div>
+    <div class="divider"><span class="divider-dot"></span></div>
 
     <div class="section-title">Aperitivo di Benvenuto</div>
     <div class="dish-name">Finger Food &amp; Bollicine</div>
     <div class="dish-desc">Selezione di canapè, fritturine dello chef e spumante</div>
 
-    <div class="divider"></div>
+    <div class="divider"><span class="divider-dot"></span></div>
 
     <div class="section-title">Primi Piatti</div>
     <div class="dish-name">Risotto ai Funghi Porcini</div>
@@ -113,19 +152,19 @@
     <div class="dish-name">Ravioli del Plin</div>
     <div class="dish-desc">Ripieni di tre carni al sugo di arrosto</div>
 
-    <div class="divider"></div>
+    <div class="divider"><span class="divider-dot"></span></div>
 
     <div class="section-title">Secondo Piatto</div>
     <div class="dish-name">Tagliata di Manzo</div>
     <div class="dish-desc">Con riduzione al vino rosso e patate al forno</div>
 
-    <div class="divider"></div>
+    <div class="divider"><span class="divider-dot"></span></div>
 
     <div class="section-title">Dessert</div>
     <div class="dish-name">Torta Nuziale &amp; Caffè</div>
     <div class="dish-desc">Buffet di dolci e piccola pasticceria</div>
 
-    <div class="divider"></div>
+    <div class="divider"><span class="divider-dot"></span></div>
 
     <div class="footer">Grazie per essere stati con noi!</div>
   </div>
